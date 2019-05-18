@@ -3,10 +3,10 @@
 
 ## contents
 ### colorscheme
-(onedark)[https://github.com/joshdick/onedark.vim] by joshdick.
+[onedark](https://github.com/joshdick/onedark.vim) by joshdick.
 
 ### Plugins
-(lightline)[https://github.com/itchyny/lightline.vim] by itchyny.
+[lightline](https://github.com/itchyny/lightline.vim) by itchyny.
 
 ### .vimrc
 please read.
