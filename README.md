@@ -7,8 +7,6 @@
 
 ### Plugins
 [lightline](https://github.com/itchyny/lightline.vim) by itchyny.
-[previm](https://github.com/previm/previm) by Previm Developers.
-[vim-markdown](https://github.com/plasticboy/vim-markdown) by plasticboy.
 
 ### .vimrc
 please [read](.vimrc).

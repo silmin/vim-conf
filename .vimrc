@@ -58,7 +58,9 @@ nnoremap wl <C-w>l
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'previm/previm'
+"Plug 'plasticboy/vim-markdown'
+"Plug 'previm/previm'
 
 call plug#end()
+
+let g:vim_markdown_folding_disabled = 1
