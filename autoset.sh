@@ -2,7 +2,9 @@
 
 cd `dirname $0`
 
-ln -s .vimrc ~/.vimrc
-ln -s .vim ~/.vim
+pos=`pwd`
+
+ln -s $pos/.vimrc ~/.vimrc
+ln -s $pos/.vim ~/.vim
 
 vim +PlugInstall +qall > /dev/null
