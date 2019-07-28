@@ -13,6 +13,18 @@ please [read](.vimrc).
 
 ## usage
 Please Rename or Remove `~/.vimrc` and `~/.vim` in advance.
+
+You can choose from `simple` or `manual` method.
+
+### simple
+```bash
+$ git clone https://github.com/silmin/vim-conf
+$ cd vim-conf
+$ ./autoset.sh
+```
+done.
+
+### manual
 ```bash
 $ cd ~
 $ git clone https://github.com/silmin/vim-conf
