@@ -6,6 +6,9 @@
 [onedark](https://github.com/joshdick/onedark.vim) by joshdick.
 
 ### Plugins
+
+Plugins managed by [vim-plug](https://github.com/junegunn/vim-plug)
+
 [lightline.vim](https://github.com/itchyny/lightline.vim) by itchyny.  
 [emmet-vim](https://github.com/mattn/emmet-vim) by mattn.  
 [vim-javascript](https://github.com/pangloss/vim-javascript) by pangloss.  
