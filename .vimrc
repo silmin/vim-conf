@@ -60,6 +60,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'gabrielelana/vim-markdown'
 
 call plug#end()
 
