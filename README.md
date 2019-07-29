@@ -8,6 +8,7 @@
 ### Plugins
 [lightline.vim](https://github.com/itchyny/lightline.vim) by itchyny.
 [emmet-vim](https://github.com/mattn/emmet-vim) by mattn.
+[vim-javascript](https://github.com/pangloss/vim-javascript) by pangloss.
 
 ### .vimrc
 please [read](.vimrc).

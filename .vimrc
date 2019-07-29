@@ -59,6 +59,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
