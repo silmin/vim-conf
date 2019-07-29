@@ -6,7 +6,7 @@
 [onedark](https://github.com/joshdick/onedark.vim) by joshdick.
 
 ### Plugins
-[lightline](https://github.com/itchyny/lightline.vim) by itchyny.
+[lightline.vim](https://github.com/itchyny/lightline.vim) by itchyny.
 [emmet-vim](https://github.com/mattn/emmet-vim) by mattn.
 
 ### .vimrc
