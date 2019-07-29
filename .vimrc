@@ -58,6 +58,7 @@ nnoremap wl <C-w>l
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
