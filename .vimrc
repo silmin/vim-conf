@@ -57,11 +57,13 @@ nnoremap wl <C-w>l
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'itchyny/lightline.vim'
-Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'gabrielelana/vim-markdown'
+"Plug 'itchyny/lightline.vim'
+"Plug 'mattn/emmet-vim'
+"Plug 'pangloss/vim-javascript'
+"Plug 'gabrielelana/vim-markdown'
+"Plug 'previm/previm'
 
 call plug#end()
 
-let g:vim_markdown_folding_disabled = 1
+let g:previm_open_cmd = 'open -a "Google Chrome"'
+let g:vim_markdown_conceal = 0
