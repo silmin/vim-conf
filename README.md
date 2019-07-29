@@ -6,9 +6,11 @@
 [onedark](https://github.com/joshdick/onedark.vim) by joshdick.
 
 ### Plugins
-[lightline.vim](https://github.com/itchyny/lightline.vim) by itchyny.
-[emmet-vim](https://github.com/mattn/emmet-vim) by mattn.
-[vim-javascript](https://github.com/pangloss/vim-javascript) by pangloss.
+[lightline.vim](https://github.com/itchyny/lightline.vim) by itchyny.  
+[emmet-vim](https://github.com/mattn/emmet-vim) by mattn.  
+[vim-javascript](https://github.com/pangloss/vim-javascript) by pangloss.  
+[gabrielelana/vim-markdown](https://github.com/gabrielelana/vim-markdown) by gabrielelana.  
+[previm/previm](https://github.com/previm/previm) by Previm Developers.  
 
 ### .vimrc
 please [read](.vimrc).

@@ -57,11 +57,11 @@ nnoremap wl <C-w>l
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-"Plug 'itchyny/lightline.vim'
-"Plug 'mattn/emmet-vim'
-"Plug 'pangloss/vim-javascript'
-"Plug 'gabrielelana/vim-markdown'
-"Plug 'previm/previm'
+Plug 'itchyny/lightline.vim'
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'gabrielelana/vim-markdown'
+Plug 'previm/previm'
 
 call plug#end()
 
