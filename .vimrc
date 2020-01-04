@@ -58,6 +58,7 @@ nnoremap wl <C-w>l
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'gabrielelana/vim-markdown'

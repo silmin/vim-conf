@@ -10,6 +10,7 @@
 Plugins managed by [vim-plug](https://github.com/junegunn/vim-plug)
 
 [lightline.vim](https://github.com/itchyny/lightline.vim) by itchyny.  
+[vim-surround](https://github.com/tpope) by tpope.  
 [emmet-vim](https://github.com/mattn/emmet-vim) by mattn.  
 [vim-javascript](https://github.com/pangloss/vim-javascript) by pangloss.  
 [vim-markdown](https://github.com/gabrielelana/vim-markdown) by gabrielelana.  
