@@ -11,11 +11,12 @@ Plugins managed by [vim-plug](https://github.com/junegunn/vim-plug)
 
 [lightline.vim](https://github.com/itchyny/lightline.vim) by itchyny.  
 [vim-surround](https://github.com/tpope/vim-surround) by tpope.  
-[vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) by terryma.
+[vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) by terryma.  
 [emmet-vim](https://github.com/mattn/emmet-vim) by mattn.  
 [vim-javascript](https://github.com/pangloss/vim-javascript) by pangloss.  
 [vim-markdown](https://github.com/gabrielelana/vim-markdown) by gabrielelana.  
 [previm](https://github.com/previm/previm) by Previm Developers.  
+[vim-go](https://github.com/fatih/vim-go) by faith.
 
 ### .vimrc
 please [read](.vimrc).
