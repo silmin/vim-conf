@@ -38,8 +38,9 @@ done.
 ```bash
 $ cd ~
 $ git clone https://github.com/silmin/vim-conf
-$ ln -s vim-conf/.vimrc .vimrc
-$ ln -s vim-conf/.vim .vim
+$ mv vim-conf .vimconf
+$ ln -s .vimconf/.vimrc .vimrc
+$ ln -s .vimconf/.vim .vim
 ```
 
 next, open vim

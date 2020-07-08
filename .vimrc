@@ -37,6 +37,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
+nnoremap <C>; :
 
 map <Esc><Esc> :nohlsearch<CR><Esc>
 

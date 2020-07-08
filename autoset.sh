@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 cd `dirname $0`
+cd ../
+mv ./vim-conf ./.vimconf
+cd ./.vimconf
 
 pos=`pwd`
 
