@@ -3,23 +3,21 @@
 
 ## contents
 ### colorscheme
-[onedark](https://github.com/joshdick/onedark.vim) by joshdick.
+vim: [onedark](https://github.com/joshdick/onedark.vim) by joshdick.
+
+neovim: [nord](https://github.com/arcticicestudio/nord-vim) by Arctic Ice Studio
 
 ### Plugins
 
 Plugins managed by [vim-plug](https://github.com/junegunn/vim-plug)
 
-[lightline.vim](https://github.com/itchyny/lightline.vim) by itchyny.  
-[vim-surround](https://github.com/tpope/vim-surround) by tpope.  
-[vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) by terryma.  
-[emmet-vim](https://github.com/mattn/emmet-vim) by mattn.  
-[vim-javascript](https://github.com/pangloss/vim-javascript) by pangloss.  
-[vim-markdown](https://github.com/gabrielelana/vim-markdown) by gabrielelana.  
-[previm](https://github.com/previm/previm) by Previm Developers.  
-[vim-go](https://github.com/fatih/vim-go) by faith.
+Please view `.vimrc` and `init.vim`
+
 
 ### .vimrc
-please [read](.vimrc).
+vim: [read](.vimrc).
+
+neovim: [read](init.vim).
 
 ## usage
 Please Rename or Remove `~/.vimrc` and `~/.vim` in advance.
@@ -37,10 +35,10 @@ done.
 ### manual
 ```bash
 $ cd ~
-$ git clone https://github.com/silmin/vim-conf
-$ mv vim-conf .vimconf
+$ git clone https://github.com/silmin/vim-conf .vimconf
 $ ln -s .vimconf/.vimrc .vimrc
 $ ln -s .vimconf/.vim .vim
+$ ln -s .vimconf/init.vim .config/nvim/init.vim
 ```
 
 next, open vim
@@ -49,5 +47,7 @@ $ vim
 ```
 type `:PlugInstall`.
 Plugin will be installed.
+
+Neovim same.
 
 done.

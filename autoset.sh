@@ -12,4 +12,6 @@ ln -s $pos/.vim ~/.vim
 ln -s $pos/init.vim ~/.config/nvim/init.vim
 
 vim +PlugInstall +qall > /dev/null
+nvim +PlugInstall +qall > /dev/null
 vim +PlugRemoteUpdate +qall > /dev/null
+nvim +PlugRemoteUpdate +qall > /dev/null

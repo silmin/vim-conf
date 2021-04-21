@@ -1,13 +1,13 @@
-if has('vim_starting')                              
+if has('vim_starting')
   set rtp+=~/.vim/plugged/vim-plug
-  let &t_SI .= "\e[6 q"                                   
-  let &t_EI .= "\e[2 q"                                                               
+  let &t_SI .= "\e[6 q"
+  let &t_EI .= "\e[2 q"
   let &t_SR .= "\e[4 q"
   if !isdirectory(expand('~/.vim/plugged/vim-plug'))
     echo 'install vim-plug...'
     call system('mkdir -p ~/.vim/plugged/vim-plug')
     call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
-  end                                                  
+  endif
 endif 
 
 set fenc=utf-8
@@ -41,11 +41,11 @@ set inccommand=split
 
 set completeopt=menuone
 
-
 syntax on
+" lightline.vim
 let g:lightline = {
-    \'colorscheme': 'onedark',
-    \}
+	\ 'colorscheme': 'nord',
+	\}
 
 set whichwrap=b,s,h,l,<,>,[,]
 
@@ -58,15 +58,25 @@ map <Esc><Esc> :nohlsearch<CR><Esc>
 
 imap <C-j> <Esc>
 
-nnoremap <S-k> {
-nnoremap <S-j> }
-nnoremap <S-h> ^
-nnoremap <S-h> $
+map <S-k> {
+map <S-j> }
+map <S-h> ^
+map <S-l> $
 
 nnoremap wh <C-w>h
 nnoremap wj <C-w>j
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
+nnoremap wn :tabn<CR>
+nnoremap wt :tabnew<CR>
+nnoremap <S-o> :b #<CR>
+
+let mapleader = "\<Space>"
+
+nmap <silent> @ <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+
+au FileType markdown nnoremap <Leader>ft :TableFormat<CR>
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
@@ -75,24 +85,44 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'gabrielelana/vim-markdown'
+Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
 Plug 'previm/previm'
 Plug 'joshdick/onedark.vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'mattn/vim-goimports'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
-colorscheme onedark
+set fillchars=vert:\ 
+hi VertSplit guifg=NONE guibg=NONE ctermfg=NONE ctermbg=black
+
+colorscheme nord
+"set termguicolors
 
 let g:previm_open_cmd = 'open -a "Google Chrome"'
 let g:vim_markdown_conceal = 0
 
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'go': ['~/golang/bin/gopls'],
+	\ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'python': ['pyls'],
+    \ 'go': ['gopls'],
     \ }
+let g:goimports = 1
 let g:deoplete#enable_at_startup = 1
+
+" treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+  },
+}
+EOF
