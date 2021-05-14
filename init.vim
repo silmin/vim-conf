@@ -42,10 +42,6 @@ set inccommand=split
 set completeopt=menuone
 
 syntax on
-" lightline.vim
-let g:lightline = {
-	\ 'colorscheme': 'nord',
-	\}
 
 set whichwrap=b,s,h,l,<,>,[,]
 
@@ -68,6 +64,7 @@ nnoremap wj <C-w>j
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
 nnoremap wn :tabn<CR>
+nnoremap wp :tabp<CR>
 nnoremap wt :tabnew<CR>
 nnoremap <S-o> :b #<CR>
 
@@ -83,38 +80,52 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'previm/previm'
 Plug 'joshdick/onedark.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'arcticicestudio/nord-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'plasticboy/vim-markdown'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 Plug 'mattn/vim-goimports'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'arcticicestudio/nord-vim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
 set fillchars=vert:\ 
-hi VertSplit guifg=NONE guibg=NONE ctermfg=NONE ctermbg=black
 
 colorscheme nord
 "set termguicolors
+hi VertSplit guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
 
+let g:lightline = {
+	\ 'colorscheme': 'nord',
+	\ 'active': {
+	\ 	'left': [ [ 'mode', 'paste' ],
+	\ 			  [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+	\ 'component_function': {
+	\ 	'gitbranch': 'FugitiveHead'
+    \ },
+	\ }
 let g:previm_open_cmd = 'open -a "Google Chrome"'
 let g:vim_markdown_conceal = 0
 
 let g:LanguageClient_serverCommands = {
-	\ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+	\ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls'],
     \ 'go': ['gopls'],
     \ }
+let g:LanguageClient_autoStart = 1
 let g:goimports = 1
+let g:rustfmt_autosave = 1
 let g:deoplete#enable_at_startup = 1
 
 " treesitter
