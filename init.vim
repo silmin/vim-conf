@@ -109,12 +109,17 @@ let g:lightline = {
 	\ 'colorscheme': 'nord',
 	\ 'active': {
 	\ 	'left': [ [ 'mode', 'paste' ],
-	\ 			  [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	\ 			  [ 'gitbranchwithmark', 'readonly', 'filename', 'modified' ] ]
     \ },
 	\ 'component_function': {
-	\ 	'gitbranch': 'FugitiveHead'
+	\ 	'gitbranchwithmark': 'LightlineGitbranchWithMark'
     \ },
 	\ }
+function LightlineGitbranchWithMark()
+	let branch = FugitiveHead()
+	return branch == '' ? branch : ' '.branch
+endfunction
+
 let g:previm_open_cmd = 'open -a "Google Chrome"'
 let g:vim_markdown_conceal = 0
 
