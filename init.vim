@@ -66,7 +66,7 @@ nnoremap wl <C-w>l
 nnoremap wn :tabn<CR>
 nnoremap wp :tabp<CR>
 nnoremap wt :tabnew<CR>
-nnoremap <S-o> :b #<CR>
+nnoremap <S-o> <C-o>
 
 let mapleader = "\<Space>"
 
