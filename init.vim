@@ -124,6 +124,8 @@ let g:previm_open_cmd = 'open -a "Google Chrome"'
 let g:vim_markdown_conceal = 0
 
 let g:LanguageClient_serverCommands = {
+	\ 'c': ['ccls', '--log-file=/tmp/cc.log'],
+	\ 'cpp': ['ccls', '--log-file=/tmp/cc.log'],
 	\ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls'],
     \ 'go': ['gopls'],
