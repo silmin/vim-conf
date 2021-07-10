@@ -127,7 +127,7 @@ let g:lightline = {
 	\ }
 function LightlineGitbranchWithMark()
 	let branch = FugitiveHead()
-	return branch == '' ? branch : ' '.branch
+	return branch == '' ? branch : ' '.branch
 endfunction
 
 autocmd FileType defx call s:defx_my_settings()
