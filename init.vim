@@ -41,8 +41,6 @@ set inccommand=split
 
 set completeopt=menuone
 
-syntax on
-
 set whichwrap=b,s,h,l,<,>,[,]
 
 nnoremap j gj
@@ -73,8 +71,6 @@ let mapleader = "\<Space>"
 nmap <silent> @ <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
 
-au FileType markdown nnoremap <Leader>ft :TableFormat<CR>
-
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
@@ -84,26 +80,38 @@ Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 Plug 'previm/previm'
-Plug 'joshdick/onedark.vim'
+Plug 'junegunn/fzf'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'arcticicestudio/nord-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'plasticboy/vim-markdown'
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'arcticicestudio/nord-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'plasticboy/vim-markdown'
 Plug 'mattn/vim-goimports'
 Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-set fillchars=vert:\ 
+
+syntax on
+
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
 
 colorscheme nord
-"set termguicolors
 hi VertSplit guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+set fillchars=vert:\ 
+
+au FileType markdown nnoremap <Leader>ft :TableFormat<CR>
+nnoremap <Leader>fz :FZF<CR>
+nnoremap <Leader>fx :Defx<CR>
 
 let g:lightline = {
 	\ 'colorscheme': 'nord',
@@ -114,10 +122,26 @@ let g:lightline = {
 	\ 'component_function': {
 	\ 	'gitbranchwithmark': 'LightlineGitbranchWithMark'
     \ },
+	\ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+	\ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
 	\ }
 function LightlineGitbranchWithMark()
 	let branch = FugitiveHead()
 	return branch == '' ? branch : ' '.branch
+endfunction
+
+autocmd FileType defx call s:defx_my_settings()
+function! s:defx_my_settings() abort
+	nnoremap <silent><buffer><expr> <CR>
+			\ defx#do_action('open')
+	nnoremap <silent><buffer><expr> l
+			\ defx#do_action('open')
+	nnoremap <silent><buffer><expr> P
+			\ defx#do_action('preview')
+	nnoremap <silent><buffer><expr> h
+			\ defx#do_action('cd', ['..'])
+	nnoremap <silent><buffer><expr> q
+			\ defx#do_action('quit')
 endfunction
 
 let g:previm_open_cmd = 'open -a "Google Chrome"'
@@ -134,6 +158,26 @@ let g:LanguageClient_autoStart = 1
 let g:goimports = 1
 let g:rustfmt_autosave = 1
 let g:deoplete#enable_at_startup = 1
+
+let g:fzf_action = {
+	\ 'ctrl-t': 'tab split',
+	\ 'ctrl-s': 'split',
+	\ 'ctrl-v': 'vsplit'
+	\}
+let g:fzf_colors = {
+	\ 'fg':      ['fg', 'Normal'],
+	\ 'bg':      ['bg', 'Normal'],
+	\ 'hl':      ['fg', 'Comment'],
+	\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+	\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+	\ 'hl+':     ['fg', 'Statement'],
+	\ 'info':    ['fg', 'PreProc'],
+	\ 'prompt':  ['fg', 'Conditional'],
+	\ 'pointer': ['fg', 'Exception'],
+	\ 'marker':  ['fg', 'Keyword'],
+	\ 'spinner': ['fg', 'Label'],
+	\ 'header':  ['fg', 'Comment']
+\}
 
 " treesitter
 lua <<EOF
