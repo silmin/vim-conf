@@ -61,14 +61,13 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'gabrielelana/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 Plug 'previm/previm'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
 let g:previm_open_cmd = 'open -a "Google Chrome"'
-let g:vim_markdown_conceal = 0
 
 " vim-go
 let g:go_highlight_types = 1
